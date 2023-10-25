@@ -118,6 +118,31 @@
         </div>
     </footer>
 
+    <script>
+        // Code JavaScript pour l'initialisation de Netlify CMS
+        document.addEventListener("DOMContentLoaded", function () {
+            // Gérer la soumission du formulaire
+            const form = document.querySelector("form[name='contact']");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+
+                // Envoyer les données du formulaire à Netlify
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(new FormData(form)).toString(),
+                })
+                    .then(function () {
+                        // Rediriger vers la page de confirmation
+                        window.location.href = "/confirmation";
+                    })
+                    .catch(function (error) {
+                        console.error("Erreur lors de l'envoi du formulaire:", error);
+                    });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
