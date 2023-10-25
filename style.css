@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@1,300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ysabeau Office', sans-serif;
+}
+
+html,
+body {
+  font-family: 'Ysabeau Office', sans-serif;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.nav-link {
+    color :white;
+    margin: 0 5px;
+}
+
+/* spacing on all sections */
+.section {
+    margin-top: 5rem;
+
+}
+.section:last-of-type {
+    padding-bottom: 4rem;
+}
+
+    
+/* hero background image */
+.section-background {
+  background-image: url('premier.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-background h2 {
+  text-align: center;
+  color: #ffffff; /* Couleur du texte */
+  font-size: 60px; /* Taille de police */
+}
+
+/* text css above hero image*/
+.hero_title {
+    font-size: 4.5rem;
+    text-align: center;
+}
+.hero_desc {
+    font-size: 2rem;
+}
+.hero_text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.image_about {
+    width: 100%;
+}
+
+.navbarDark {
+    background: #000;
+}
+
+
+.main-content {
+    flex: 1; /* Utilisation de flex pour remplir l'espace disponible en hauteur */
+    display: flex;
+    flex-direction: column; /* Empilez le contenu verticalement */
+    justify-content: center; /* Centrez verticalement le contenu */
+    align-items: center; /* Centrez horizontalement le contenu */
+    position:relative;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    background-color: #dfdfe0;
+}
+
+.menu {
+  background-color: #ffffff; /* Couleur de fond du menu */
+  border: 1px solid darkgrey; /* Contour du menu */
+  border-radius: 5px; /* Coins arrondis du menu */
+  padding: 10px; /* Espace intérieur du menu */
+}
+.menu ul {
+  list-style: none; /* Supprime les puces de la liste */
+  padding: 0;
+}
+.menu li {
+  margin: 5px 0;
+}
+.menu a {
+  color: #FFFFFF; /* Couleur du texte du menu */
+  text-decoration: none; /* Supprime les soulignements des liens */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crée 3 colonnes de largeur égale */
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap : 4px;
+  width: 100%;
+}
+
+
+
+/* Styles CSS pour la disposition en grille */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ajustez selon vos besoins */
+}
+
+.grid-item {
+  flex: 0 0 calc(33.33% - 10px); /* Ajustez la largeur des éléments en fonction du nombre d'éléments par ligne */
+  margin-bottom: 20px; /* Espace entre les éléments */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background-color: black;
+    padding: 10px 0;
+    margin-bottom: 0;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    height: auto;
+    width: 100%;
+    margin-right: 0;
+    z-index: 1;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin: 0 20px;
+    border-radius: 50%;
+    color: black; /* Changé en noir */
+    transition: transform 0.5s ease;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    transform: scale(1.5);
+  }
+  
+  /* Reste du code inchangé */
+  @media (max-width: 768px) {
+    .col-md {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 574px) {
+    .col-md {
+      width: 100%;
+    }
+  }

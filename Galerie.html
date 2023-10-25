@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Charles Cantin - Photographe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--  Google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@1,300&display=swap" rel="stylesheet">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Sélectionnez toutes les cases à cocher
+        $('.form-check-input').change(function() {
+            var checkedValues = [];
+
+            // Parcourez toutes les cases à cocher pour obtenir les valeurs cochées
+            $('.form-check-input:checked').each(function() {
+                checkedValues.push($(this).val());
+            });
+
+            // Si la case "Tout" est cochée, réinitialisez les filtres
+            if (checkedValues.includes("H")) {
+                // Décochez toutes les cases sauf la case "Tout"
+                $('.form-check-input').not('#H').prop('checked', false);
+                // Affichez toutes les cartes
+                $('.card').css('display', 'block');
+            } else {
+                // Parcourez toutes les cartes
+                $('.card').each(function() {
+                    var cardId = $(this).attr('id');
+                    // Si l'identifiant de la carte est dans les valeurs cochées, affichez la carte, sinon masquez-la
+                    if (checkedValues.includes(cardId)) {
+                        $(this).css('display', 'block');
+                    } else {
+                        $(this).css('display', 'none');
+                    }
+                });
+            }
+        });
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtenez des références aux éléments du bouton et de la liste
+        var toggleButton = document.getElementById("toggleButton");
+        var elementToToggle = document.getElementById("elementToToggle");
+
+        // Ajoutez un gestionnaire d'événement au bouton
+        toggleButton.addEventListener("click", function () {
+            // Basculez la classe "d-none" de la liste pour afficher ou masquer la liste
+            elementToToggle.classList.toggle("d-none");
+
+            // Modifiez le texte du bouton en fonction de l'état de la liste
+            if (elementToToggle.classList.contains("d-none")) {
+                toggleButton.textContent = "Filtrer";
+            } else {
+                toggleButton.textContent = "Fermer";
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+<body>
+    <!-- navbar -->
+    <!-- https://getbootstrap.com/docs/5.2/components/navbar/ -->
+    <!-- Add class of bg-light to nav element -->
+    <nav class="navbar navbar-expand-lg fixed-top navbarScroll navbar-dark navbarDark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Charles Cantin - Photographe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Galerie.html">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Tarifs-et-prestations.html">Tarifs et Prestations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main class="main-content">
+        <div class="row my-3 mt-3 mb-3 justify-content-center">
+            <h1> Galerie </h1>
+        </div>
+        <div>
+            <div class="menu d-none" id="elementToToggle" style="display: none;">
+                <div class="d-flex flex-wrap">
+                    <div class="form-check list-inline-item mr-4">
+                        <input class="form-check-input" type="checkbox" id="A" value="A">
+                        <label class="form-check-label" for="A">Mariage</label>
+                    </div>
+                    <div class="form-check list-inline-item mr-4">
+                        <input class="form-check-input" type="checkbox" id="B" value="B">
+                        <label class="form-check-label" for="B">Grossesse</label>
+                    </div>
+                    <div class="form-check list-inline-item mr-4">
+                        <input class="form-check-input" type="checkbox" id="C" value="C">
+                        <label class="form-check-label" for="C">Bébé</label>
+                    </div>
+                    <div class="form-check list-inline-item mr-4">
+                        <input class="form-check-input" type="checkbox" id="D" value="D">
+                        <label class="form-check-label" for="D">Famille</label>
+                    </div>
+                    <div class="form-check list-inline-item mr-4">
+                        <input class="form-check-input" type="checkbox" id="E" value="E">
+                        <label class="form-check-label" for="E">Baptême</label>
+                    </div>
+                    <div class="form-check list-inline-item mr-4">
+                        <input class="form-check-input" type="checkbox" id="F" value="F">
+                        <label class="form-check-label" for="F">Couple</label>
+                    </div>
+                    <div class="form-check list-inline-item mr-4">
+                        <input class="form-check-input" type="checkbox" id="G" value="G">
+                        <label class="form-check-label" for="G">Portrait</label>
+                    </div>
+                    <div class="form-check list-inline-item">
+                        <input class="form-check-input" type="checkbox" id="H" value="H">
+                        <label class="form-check-label" for="H">Tout</label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+            <button type="button" class="btn btn-light justify-content-center" id="toggleButton"> Filtrer </button>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <div class="grid">
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="A">
+                        <img class="card-img-top" src="mariage.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Mariage<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card p-3 text-right" style="width: 20rem;">
+                        <blockquote class="blockquote mb-0">
+                            <p>"La photographie est une histoire qui ne dit rien, mais qui montre tout."</p>
+                            <footer class="blockquote-footer">
+                                <small class="text-muted">
+                                    Citation <cite title="Source Title">Charles Cantin</cite>
+                                </small>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="B">
+                        <img class="card-img-top" src="grossesse.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Grossesse<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 15rem;" id="C">
+                        <img class="card-img-top" src="bébé.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Bébé<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="D">
+                        <img class="card-img-top" src="famille.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Famille<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="E">
+                        <img class="card-img-top" src="bapteme.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Baptême<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="F">
+                        <img class="card-img-top" src="couple.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Couple<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="G">
+                        <img class="card-img-top" src="portrait.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Portrait<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="A">
+                        <img class="card-img-top" src="mariage 2.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Mariage<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="F">
+                        <img class="card-img-top" src="couple 2.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Couple<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 16rem;" id="G">
+                        <img class="card-img-top" src="portrait 2.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Portrait<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="A">
+                        <img class="card-img-top" src="mariage 3.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Mariage<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="D">
+                        <img class="card-img-top" src="famille 2.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Famille<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="C">
+                        <img class="card-img-top" src="bébé 2.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Bébé<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 25rem;" id="B">
+                        <img class="card-img-top" src="grossesse 2.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Grossesse<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="F">
+                        <img class="card-img-top" src="couple 3.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Couple<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 16rem;" id="G">
+                        <img class="card-img-top" src="portrait 3.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Portrait<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="E">
+                        <img class="card-img-top" src="bapteme 2.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Baptême<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="C">
+                        <img class="card-img-top" src="bébé 3.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Bébé<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="D">
+                        <img class="card-img-top" src="famille 3.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Famille<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="E">
+                        <img class="card-img-top" src="bapteme 3.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Baptême<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card" style="width: 20rem;" id="B">
+                        <img class="card-img-top" src="grossesse 3.jpg" alt="Card image cap">
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                &#8213 Grossesse<cite title="Source Title"></cite>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+
+    <footer class="footer fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="grid">
+                    <div class="col-md">
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/mateo_souquet"><i class="fab fa-facebook-f"></i></a>
+                            <a href="mailto:votreadresseemail@example.com"><i class="far fa-envelope"></i></a>
+                            <a href="https://www.instagram.com/mateo_sqt/?igshid=YmMyMTA2M2Y?"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
