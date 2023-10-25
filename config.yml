@@ -1,0 +1,13 @@
+backend:
+  name: git-Portfolio_photographe
+  branch: main # Branche Git sur laquelle Netlify CMS effectuera des modifications
+media_folder: static/assets
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/blog'
+    create: true
+    fields:
+      - { name: 'title', label: 'Title' }
+      - { name: 'date', label: 'Date', widget: 'date' }
+      - { name: 'body', label: 'Body', widget: 'markdown' }
