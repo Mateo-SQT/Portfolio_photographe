@@ -6,16 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- bootstrap CDN -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- font awesome -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!--  Google font  -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@1,300&display=swap" rel="stylesheet">
-    <!-- linking css file -->
+
     <link rel="stylesheet" href="style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -80,12 +80,12 @@
 
 </script>
 <style>
-    /* Style pour les champs acceptés */
+    /* champs acceptés */
 .accepted {
     border: 2px solid green;
 }
 
-/* Style pour les champs refusés */
+/* champs refusés */
 .rejected {
     border: 2px solid red;
 }
@@ -96,9 +96,7 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <!-- https://getbootstrap.com/docs/5.2/components/navbar/ -->
-    <!-- Add class of bg-light to nav element -->
+
     <nav class="navbar navbar-expand-lg fixed-top navbarScroll navbar-dark navbarDark">
         <div class="container">
             <a class="navbar-brand" href="index.html">Charles Cantin - Photographe</a>
@@ -132,7 +130,7 @@
         </div>
         <div class="container-fluid mt-5 justify-content-center">
             <h1 class="mb-4">Contactez-nous</h1>
-            <form name="contact" method="POST" data-netlify="true" action="/.netlify/functions/submitForm">
+            <form name="contact" method="POST" data-netlify="true" action="/.netlify/functions/submitForm" action="confirmation.html">
                 <div class="row">
                     <div class="col">
                         <label for="First name">Prénom :</label>
@@ -190,21 +188,20 @@
     </footer>
 
     <script>
-        // Code JavaScript pour l'initialisation de Netlify CMS
+
         document.addEventListener("DOMContentLoaded", function () {
-            // Gérer la soumission du formulaire
+
             const form = document.querySelector("form[name='contact']");
             form.addEventListener("submit", function (e) {
-                e.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+                e.preventDefault(); 
 
-                // Envoyer les données du formulaire à Netlify
                 fetch("/", {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: new URLSearchParams(new FormData(form)).toString(),
                 })
                     .then(function () {
-                        // Rediriger vers la page de confirmation
+
                         window.location.href = "/confirmation";
                     })
                     .catch(function (error) {

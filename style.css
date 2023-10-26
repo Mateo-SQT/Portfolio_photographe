@@ -20,7 +20,7 @@ body {
     margin: 0 5px;
 }
 
-/* spacing on all sections */
+
 .section {
     margin-top: 5rem;
 
@@ -30,7 +30,7 @@ body {
 }
 
     
-/* hero background image */
+
 .section-background {
   background-image: url('premier.png');
   background-size: cover;
@@ -44,11 +44,11 @@ body {
 
 .section-background h2 {
   text-align: center;
-  color: #ffffff; /* Couleur du texte */
-  font-size: 60px; /* Taille de police */
+  color: #ffffff; 
+  font-size: 60px; 
 }
 
-/* text css above hero image*/
+
 .hero_title {
     font-size: 4.5rem;
     text-align: center;
@@ -75,11 +75,11 @@ body {
 
 
 .main-content {
-    flex: 1; /* Utilisation de flex pour remplir l'espace disponible en hauteur */
+    flex: 1; 
     display: flex;
-    flex-direction: column; /* Empilez le contenu verticalement */
-    justify-content: center; /* Centrez verticalement le contenu */
-    align-items: center; /* Centrez horizontalement le contenu */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
     position:relative;
     padding-top: 6%;
     padding-bottom: 6%;
@@ -87,27 +87,27 @@ body {
 }
 
 .menu {
-  background-color: #ffffff; /* Couleur de fond du menu */
-  border: 1px solid darkgrey; /* Contour du menu */
-  border-radius: 5px; /* Coins arrondis du menu */
-  padding: 10px; /* Espace intérieur du menu */
+  background-color: #ffffff; 
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  padding: 10px; 
 }
 .menu ul {
-  list-style: none; /* Supprime les puces de la liste */
+  list-style: none;
   padding: 0;
 }
 .menu li {
   margin: 5px 0;
 }
 .menu a {
-  color: #FFFFFF; /* Couleur du texte du menu */
-  text-decoration: none; /* Supprime les soulignements des liens */
+  color: #FFFFFF; 
+  text-decoration: none; 
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Crée 3 colonnes de largeur égale */
-  gap: 20px; /* Espacement entre les cartes */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
 }
 
 
@@ -120,20 +120,24 @@ body {
 
 
 
-/* Styles CSS pour la disposition en grille */
+
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Ajustez selon vos besoins */
+  justify-content: space-between; 
 }
 
 .grid-item {
-  flex: 0 0 calc(33.33% - 10px); /* Ajustez la largeur des éléments en fonction du nombre d'éléments par ligne */
-  margin-bottom: 20px; /* Espace entre les éléments */
+  flex: 0 0 calc(33.33% - 10px); 
+  margin-bottom: 20px; 
   display: grid;
   align-items: center;
   justify-content: center;
 }
+
+
+
+
 
 /* ========== FOOTER ========== */
 .footer {
@@ -163,7 +167,7 @@ body {
     background-color: white;
     margin: 0 20px;
     border-radius: 50%;
-    color: black; /* Changé en noir */
+    color: black; 
     transition: transform 0.5s ease;
     text-decoration: none;
   }
@@ -172,7 +176,7 @@ body {
     transform: scale(1.5);
   }
   
-  /* Reste du code inchangé */
+
   @media (max-width: 768px) {
     .col-md {
       width: 50%;
